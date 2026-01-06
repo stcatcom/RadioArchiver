@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/24444074/README.md)
+[README.md](https://github.com/user-attachments/files/24444393/README.md)
 # RadioArchiver
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -29,6 +29,11 @@ RadioArchiverは、ラジオ放送局やネットラジオの同時録音（同�
 ### 必要なソフトウェア
 - Python 3.8以上
 - オーディオデバイス（録音用）
+
+### ストレージ容量
+- **90日間録音（標準設定）**: 約1.3TB
+- **推奨**: 2TB以上のHDD/SSD
+- 詳細は [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) を参照
 
 ## インストール
 
@@ -154,6 +159,24 @@ pip install sounddevice
 
 1. ファイアウォールでポート5000が許可されているか確認
 2. 別のポート番号を試す（設定タブで変更）
+
+## ストレージ管理
+
+### 容量の目安
+
+| 保持期間 | 必要容量（ステレオ 16bit 44.1kHz） |
+|---------|----------------------------------|
+| 7日 | 約100GB |
+| 30日 | 約426GB |
+| 90日 | 約1.3TB |
+
+### 容量削減のヒント
+
+1. **モノラル録音**: 容量を約50%削減
+2. **保持期間の短縮**: ネットラジオなら7〜30日も検討
+3. **自動削除機能**: 設定タブで保持期間を調整可能
+
+詳細は [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) を参照してください。
 
 ## 技術仕様
 
