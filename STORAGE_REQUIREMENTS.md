@@ -1,4 +1,4 @@
-[STORAGE_REQUIREMENTS.md](https://github.com/user-attachments/files/24444409/STORAGE_REQUIREMENTS.md)
+[STORAGE_REQUIREMENTS.md](https://github.com/user-attachments/files/24444419/STORAGE_REQUIREMENTS.md)
 # RadioArchiver - ストレージ容量要件
 
 ## 90日間録音の容量見積もり
@@ -128,28 +128,6 @@ RadioArchiverは古いファイルを自動削除します。
 2. モノラル録音に変更
 3. サンプルレートを下げる（44.1kHz→32kHz）
 4. ディスクを追加購入
-
----
-
-## まとめ
-
-### 放送局向け推奨構成
-
-```
-ディスク: 2TB HDD × 2台（RAID1）
-設定: ステレオ 16bit 44.1kHz
-保持期間: 90日（放送法準拠）
-費用: 約¥16,000〜¥24,000
-```
-
-### ネットラジオ向け推奨構成
-
-```
-ディスク: 1TB SSD × 1台
-設定: モノラル 16bit 44.1kHz
-保持期間: 30日
-費用: 約¥10,000〜¥15,000
-```
 
 ---
 
