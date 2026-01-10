@@ -17,7 +17,7 @@ Organization: Office Stray Cat
 Website: https://stcat.com/
 Email: info@stcat.com
 GitHub: https://github.com/stcatcom/RadioArchiver
-Version: 0.1.0
+Version: 0.1.1
 """
 
 import os
