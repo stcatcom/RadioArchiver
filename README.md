@@ -220,6 +220,10 @@ Copyright (c) 2026 Masaya Miyazaki / Office Stray Cat
 
 ## 更新履歴
 
+### Version 0.1.1 (2026-01-09)
+- コードの一部に試験環境用の設定が残ったままだったものを修正
+
 ### Version 0.1.0 (2026-01-06)
 - 初回リリース
 - 録音・結合・Web UI・自動削除機能を統合
+
