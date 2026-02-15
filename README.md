@@ -1,46 +1,49 @@
-[README.md](https://github.com/user-attachments/files/24444393/README.md)
 # RadioArchiver
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](https://github.com/stcatcom/RadioArchiver)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg)](https://paypal.me/stcatcom?locale.x=ja_JP&country.x=JP)
 
-放送局向け録音・アーカイブ統合システム
+[日本語版 README はこちら](README_JP.md)
 
-## 概要
+Integrated Recording & Archive System for Broadcast Stations
 
-RadioArchiverは、ラジオ放送局やネットラジオの同時録音（同録）と音声アーカイブを管理するための統合アプリケーションです。
+## Overview
 
-### 主な機能
+RadioArchiver is an integrated application for managing simultaneous recording and audio archiving for radio broadcast stations and internet radio.
 
-- 🎙️ **連続録音**: 1分ごとに自動分割、毎分00秒で区切り
-- 📼 **アーカイブ結合**: 指定時間範囲のWAVファイルを結合
-- 🌐 **Web UI**: スマホ・タブレットから操作可能
-- 🗑️ **自動削除**: 古いファイルを自動削除（設定可能）
-- 📊 **レベルメーター**: リアルタイムの音量確認
+### Key Features
 
-## システム要件
+- 🎙️ **Continuous Recording**: Auto-split every 1 minute, aligned to the :00 second mark
+- 📼 **Archive Merge**: Merge WAV files within a specified time range
+- 🌐 **Web UI**: Operable from smartphones and tablets
+- 🗑️ **Auto Cleanup**: Automatically delete old files (configurable)
+- 📊 **Level Meter**: Real-time audio level monitoring
+- 🌍 **Multilingual**: English and Japanese support
 
-### 対応OS
+## System Requirements
+
+### Supported OS
 - Windows 10/11
-- Linux (Ubuntu 20.04以降推奨)
-- macOS (10.14以降)
+- Linux (Ubuntu 20.04 or later recommended)
+- macOS (10.14 or later)
 
-### 必要なソフトウェア
-- Python 3.8以上
-- オーディオデバイス（録音用）
+### Required Software
+- Python 3.8 or later
+- Audio device (for recording)
 
-### ストレージ容量
-- **90日間録音（標準設定）**: 約1.3TB
-- **推奨**: 2TB以上のHDD/SSD
-- 詳細は [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) を参照
+### Storage
+- **90-day recording (default settings)**: Approx. 1.3TB
+- **Recommended**: 2TB or larger HDD/SSD
+- See [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) for details
 
-## インストール
+## Installation
 
-### 1. Pythonのインストール
+### 1. Install Python
 
 #### Windows
-[Python公式サイト](https://www.python.org/downloads/)から最新版をダウンロードしてインストール
+Download and install from the [Python official site](https://www.python.org/downloads/)
 
 #### Linux (Ubuntu/Debian)
 ```bash
@@ -48,68 +51,69 @@ sudo apt update
 sudo apt install python3 python3-pip python3-tk
 ```
 
-### 2. 依存パッケージのインストール
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-または個別にインストール:
+Or install individually:
 ```bash
 pip install Flask sounddevice numpy
 ```
 
-## 使い方
+## Usage
 
-### 起動
+### Launch
 
 ```bash
 python RadioArchiver.py
 ```
 
-### 初回設定
+### Initial Setup
 
-1. **⚙️ 設定タブ** を開く
-2. **録音ディレクトリ** と **結合ファイル保存先** を設定
-3. **📁 ディレクトリを作成** をクリック
-4. **💾 設定を保存** をクリック
+1. Open the **⚙️ Settings** tab
+2. Set the **Language** (English / Japanese)
+3. Set the **Recording Directory** and **Merged File Output** directory
+4. Click **📁 Create Directories**
+5. Click **💾 Save Settings**
 
-### 録音
+### Recording
 
-1. **📻 録音タブ** を開く
-2. **録音デバイス** を選択（🔄更新で一覧更新）
-3. **サンプルレート・チャンネル数・ビット深度** を設定
-4. **🎧 モニター開始** で音量確認
-5. **⏺ 録音開始** で録音スタート
+1. Open the **📻 Recording** tab
+2. Select a **Recording Device** (click 🔄 Refresh to update the list)
+3. Set **Sample Rate**, **Channels**, and **Bit Depth**
+4. Click **🎧 Start Monitor** to check audio levels
+5. Click **⏺ Start Recording** to begin
 
-### ファイル結合
+### File Merge
 
-#### GUIから
-1. **📼 アーカイブ結合タブ** を開く
-2. 開始時刻・終了時刻を入力
-3. **🔄 結合開始** をクリック
+#### From GUI
+1. Open the **📼 Archive Merge** tab
+2. Enter start and end times
+3. Click **🔄 Start Merge**
 
-#### Web UIから
-1. **🌐 Web UIタブ** を開く
-2. 表示されたURLをブラウザで開く（自動起動済み）
-3. 時刻を入力して **🔄 結合開始**
+#### From Web UI
+1. Open the **🌐 Web UI** tab
+2. Open the displayed URL in a browser (auto-started)
+3. Enter the time range and click **🔄 Start Merge**
 
-## ファイル形式
+## File Formats
 
-### 録音ファイル
-- 形式: `rec_YYYYMMDD-HHMMSS.wav`
-- 例: `rec_20250105-143000.wav` (2025年1月5日 14:30:00)
-- 分割: 1分ごと（毎時00秒区切り）
+### Recording Files
+- Format: `rec_YYYYMMDD-HHMMSS.wav`
+- Example: `rec_20250105-143000.wav` (Jan 5, 2025, 14:30:00)
+- Split: Every 1 minute (aligned to :00 seconds)
 
-### 結合ファイル
-- 形式: `merged_開始時刻_終了時刻.wav`
-- 例: `merged_20250105-140000_20250105-150000.wav`
+### Merged Files
+- Format: `merged_starttime_endtime.wav`
+- Example: `merged_20250105-140000_20250105-150000.wav`
 
-## 設定
+## Configuration
 
 ### config.ini
 
-アプリケーションと同じディレクトリに自動生成されます。
+Automatically generated in the same directory as the application.
 
 ```ini
 [DEFAULT]
@@ -121,22 +125,23 @@ channels = 2
 bit_depth = 16
 recording_retention_days = 90
 merged_retention_hours = 2
+language = en
 ```
 
-### ファイル保持期間
+### File Retention Periods
 
-#### 同録ファイル（rec_*.wav）
-- **デフォルト**: 90日
-- **用途**: 放送法対応（地上波放送局は3ヶ月保存義務）
-- **ネットラジオ**: 7日・30日など自由に設定可能
+#### Recording Files (rec_*.wav)
+- **Default**: 90 days
+- **Purpose**: Compliance with broadcasting regulations (terrestrial broadcasters are required to retain recordings for 3 months in Japan)
+- **Internet radio**: Freely configurable (7 days, 30 days, etc.)
 
-#### 結合ファイル（merged_*.wav）
-- **デフォルト**: 2時間
-- **用途**: ダウンロード後は不要なため短期間
+#### Merged Files (merged_*.wav)
+- **Default**: 2 hours
+- **Purpose**: Short retention since files are typically downloaded immediately
 
-## トラブルシューティング
+## Troubleshooting
 
-### sounddeviceがインストールできない
+### Cannot install sounddevice
 
 **Windows**:
 ```bash
@@ -149,81 +154,91 @@ sudo apt install portaudio19-dev
 pip install sounddevice
 ```
 
-### 録音デバイスが表示されない
+### Recording devices not showing
 
-1. オーディオデバイスが正しく接続されているか確認
-2. **🔄 更新** ボタンをクリック
-3. 他のアプリがデバイスを使用していないか確認
+1. Verify that the audio device is properly connected
+2. Click the **🔄 Refresh** button
+3. Ensure no other application is using the device
 
-### Web UIにアクセスできない
+### Cannot access Web UI
 
-1. ファイアウォールでポート5000が許可されているか確認
-2. 別のポート番号を試す（設定タブで変更）
+1. Check that port 5000 is allowed through the firewall
+2. Try a different port number (change in the Settings tab)
 
-## ストレージ管理
+## Storage Management
 
-### 容量の目安
+### Capacity Estimates
 
-| 保持期間 | 必要容量（ステレオ 16bit 44.1kHz） |
+| Retention Period | Required Space (Stereo 16bit 44.1kHz) |
 |---------|----------------------------------|
-| 7日 | 約100GB |
-| 30日 | 約426GB |
-| 90日 | 約1.3TB |
+| 7 days | ~100GB |
+| 30 days | ~426GB |
+| 90 days | ~1.3TB |
 
-### 容量削減のヒント
+### Tips for Reducing Storage
 
-1. **モノラル録音**: 容量を約50%削減
-2. **保持期間の短縮**: ネットラジオなら7〜30日も検討
-3. **自動削除機能**: 設定タブで保持期間を調整可能
+1. **Mono recording**: Reduces storage by ~50%
+2. **Shorter retention**: Consider 7-30 days for internet radio
+3. **Auto cleanup**: Adjust retention in the Settings tab
 
-詳細は [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) を参照してください。
+See [STORAGE_REQUIREMENTS.md](STORAGE_REQUIREMENTS.md) for details.
 
-## 技術仕様
+## Technical Specifications
 
-### 録音
-- **ダブルバッファリング**: 音の取りこぼしゼロ
-- **タイムスタンプベース**: サンプル単位で正確な分割
-- **対応フォーマット**:
-  - サンプルレート: 44.1kHz / 48kHz / 96kHz
-  - チャンネル: モノラル / ステレオ
-  - ビット深度: 16bit / 24bit / 32bit
+### Recording
+- **Double buffering**: Zero audio dropout
+- **Timestamp-based**: Sample-accurate splitting
+- **Supported formats**:
+  - Sample rate: 44.1kHz / 48kHz / 96kHz
+  - Channels: Mono / Stereo
+  - Bit depth: 16bit / 24bit / 32bit
 
-### 結合
-- **±1分マージン**: 時刻のエッジ部分を漏らさない
-- **純粋Python実装**: FFmpeg不要
-- **フォーマット検証**: 不整合ファイルはスキップ
+### Merging
+- **±1 minute margin**: Ensures no audio is missed at time boundaries
+- **Pure Python implementation**: No FFmpeg required
+- **Format validation**: Skips files with mismatched formats
 
-## ライセンス
+## License
 
 MIT License
 
 Copyright (c) 2026 Masaya Miyazaki / Office Stray Cat
 
-詳細は [LICENSE](LICENSE) ファイルを参照してください。
+See the [LICENSE](LICENSE) file for details.
 
-**注意**: このソフトウェアを改変・派生する際は、著作権表示を削除しないでください。
+**Note**: Please do not remove the copyright notice when modifying or creating derivative works.
 
-## 作者
+## Author
 
 - **Masaya Miyazaki** / Office Stray Cat
 - Website: https://stcat.com/
 - Email: info@stcat.com
 - GitHub: [@stcatcom](https://github.com/stcatcom)
 
-## サポート
+## Support
 
-問題が発生した場合は、ログファイルを確認してください：
-- コンソール出力
-- Pythonの標準エラー出力
+If you encounter any issues, check the log output:
+- Console output
+- Python stderr
 
-バグ報告や機能要望は [GitHub Issues](https://github.com/stcatcom/RadioArchiver/issues) までお願いします。
+For bug reports and feature requests, please visit [GitHub Issues](https://github.com/stcatcom/RadioArchiver/issues).
 
-## 更新履歴
+If you find this project helpful, consider supporting development:
+
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue.svg)](https://paypal.me/stcatcom?locale.x=ja_JP&country.x=JP)
+
+## Changelog
+
+### Version 0.2.0 (2026-02-15)
+- Added English language support
+- Added language switching in Settings tab (English / Japanese)
+- Default language changed to English
+- Web UI now supports both English and Japanese
+- Updated README to English, added README_JP.md for Japanese
 
 ### Version 0.1.1 (2026-01-09)
-- コードの一部に試験環境用の設定が残ったままだったものを修正
+- Fixed leftover test environment settings in the code
 
 ### Version 0.1.0 (2026-01-06)
-- 初回リリース
-- 録音・結合・Web UI・自動削除機能を統合
-
+- Initial release
+- Integrated recording, merging, Web UI, and auto-cleanup features
